@@ -19,3 +19,16 @@ In order for XDS to process D8 Venture data, the coordinate system relating the 
 - [Numpy](http://www.numpy.org/)
 - [Matplolitlib](https://matplotlib.org/)
 - [XDS](http://xds.mpimf-heidelberg.mpg.de/) if you wish to plot the experiment geometry.
+
+### Sample Input
+This directory contains an example input for XDS (XDS.INP). This corresponds to an experiment at the CCB facility with the following parameters:
+- 2 theta = -10
+- omega = 0
+- Detector distance = 70
+The following parameters are compatible with the photon 100 detector on the D8 Venture:
+- QX = 0.096
+- QY = 0.096
+- NX = 1024
+- NY = 1024
+
+The D8 goniometer is fixed to chi = 54.717 degrees.
