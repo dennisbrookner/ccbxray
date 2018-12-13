@@ -1,5 +1,51 @@
 import numpy as np
 
+
+class experiment():
+    diffractometer = None
+    goniometer = None
+    def __init__(self, diffractometer=None, goniometer=None):
+        self.diffractometer = diffractometer
+        self.goniometer = goniometer
+
+    def generate_xds_in(self):
+        text = ''
+        if self.diffractometer is not None:
+            text += self.diffractometer.generate_xds_in()
+        if self.goniometer is not None:
+            text += self.goniometer.generate_xds_in()
+        return text
+
+    def plot(self):
+        from matplotlib import pyplot as plt
+        if self.diffractometer is not None:
+            ax = self.diffractometer.plot_panel()
+            ax = self.goniometer.plot(ax)
+            x,y,z = self.goniometer.rotation_axis[:,None]*np.linspace(-1, 1, 100)*self.diffractometer.F/5.
+            ax.plot(x, y, z, c='violet')
+            plt.show()
+
+class three_axis_goniometer():
+    phi = None
+    kappa = None #Angle between phi axis and X-axis in the YZ plane in the lab frame
+    omega = None #Angle between phi axis and X-axis in the XZ plane in the lab frame
+    rotation_axis = None
+
+    def __init__(self, phi, kappa, omega):
+        self.phi = phi
+        self.kappa = kappa
+        self.omega = omega
+        self.rotation_axis = np.array([np.cos(np.deg2rad(self.omega)), np.sin(np.deg2rad(self.kappa)), np.sin(np.deg2rad(self.omega))])
+        self.rotation_axis = self.rotation_axis/np.linalg.norm(self.rotation_axis, 2)
+
+    def generate_xds_in(self):
+        return "ROTATION_AXIS= {} {} {}\n".format(*self.rotation_axis)
+
+    def plot(self, axis):
+        x,y,z = self.rotation_axis[:,None]*np.linspace(0, 1, 100)
+        axis.scatter(x, y, z, c='violet')
+        return axis
+
 class swing_diffractometer():
     """This very simple class represents a diffraction experiment with a single detector that has a swing axis allowing rotation about the sample in the X plane."""
     QX = None #Pixel size
@@ -10,6 +56,7 @@ class swing_diffractometer():
     ORGX = None
     ORGY = None
     CHI = None
+    goniometer = None
 
     def __init__(self, QX, QY, F, NX, NY, CHI):
         """
@@ -35,6 +82,7 @@ class swing_diffractometer():
         self.NY = NY
         self.CHI = CHI
         self.X_AXIS = np.array([np.cos(np.deg2rad(self.CHI)), 0, np.sin(np.deg2rad(self.CHI))])
+        self.X_AXIS = self.X_AXIS/np.linalg.norm(self.X_AXIS, 2)
         self.Y_AXIS = np.array([0, 1, 0])
         self.DETECTOR_ORG = np.array([-self.F*np.sin(np.deg2rad(self.CHI)),0,self.F*np.cos(np.deg2rad(self.CHI))])
 
@@ -62,7 +110,7 @@ class swing_diffractometer():
         ax.set_xlabel("X (mm)")
         ax.set_ylabel("Y (mm)")
         ax.set_zlabel("Z (mm)")
-        plt.show()
+        return ax
 
     def panel_edge_pixels(self, stride=None):
         """
