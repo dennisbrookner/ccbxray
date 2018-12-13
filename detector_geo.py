@@ -46,7 +46,6 @@ class three_axis_goniometer():
         self.omega = omega
         self.rotation_axis = np.array([np.cos(np.deg2rad(self.omega)), np.sin(np.deg2rad(self.kappa)), np.sin(np.deg2rad(self.omega))])
         self.rotation_axis = self.rotation_axis/np.linalg.norm(self.rotation_axis, 2)
-        if sign is None:
         sign = -1. if sign is None else np.sign(sign)
         self.rotation_axis = sign*self.rotation_axis
 
