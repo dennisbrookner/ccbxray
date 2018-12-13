@@ -31,12 +31,24 @@ class three_axis_goniometer():
     omega = None #Angle between phi axis and X-axis in the XZ plane in the lab frame
     rotation_axis = None
 
-    def __init__(self, phi, kappa, omega):
+    def __init__(self, phi, kappa, omega, sign=None):
+        """
+        PARAMETERS
+        ----------
+        phi : float
+        kappa : float
+        omega : float
+        sign : float (optional)
+            The direction of phi axis rotation. The default sign is -1. Input either a positive or negative float. Internally, the class will multiply the rotation axis by np.sign(sign)*rotation_axis.
+        """
         self.phi = phi
         self.kappa = kappa
         self.omega = omega
         self.rotation_axis = np.array([np.cos(np.deg2rad(self.omega)), np.sin(np.deg2rad(self.kappa)), np.sin(np.deg2rad(self.omega))])
         self.rotation_axis = self.rotation_axis/np.linalg.norm(self.rotation_axis, 2)
+        if sign is None:
+        sign = -1. if sign is None else np.sign(sign)
+        self.rotation_axis = sign*self.rotation_axis
 
     def generate_xds_in(self):
         return "ROTATION_AXIS= {} {} {}\n".format(*self.rotation_axis)
