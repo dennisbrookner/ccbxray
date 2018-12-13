@@ -18,3 +18,4 @@ In order for XDS to process D8 Venture data, the coordinate system relating the 
 - Python 3
 - [Numpy](http://www.numpy.org/)
 - [Matplolitlib](https://matplotlib.org/)
+- [XDS](http://xds.mpimf-heidelberg.mpg.de/) if you wish to plot the experiment geometry.
