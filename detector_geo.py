@@ -66,10 +66,10 @@ class swing_diffractometer():
     NY = None
     ORGX = None
     ORGY = None
-    CHI = None
+    TWOTHETA = None
     goniometer = None
 
-    def __init__(self, QX, QY, F, NX, NY, CHI):
+    def __init__(self, QX, QY, F, NX, NY, TWOTHETA):
         """
         PARAMETERS
         ----------
@@ -83,7 +83,7 @@ class swing_diffractometer():
             number of pixels in the x direction
         NY : int
             number of pixels in the y direction
-        CHI : float
+        TWOTHETA : float
             swing angle of the detector
         """
         self.QX = QX
@@ -91,11 +91,13 @@ class swing_diffractometer():
         self.F = F
         self.NX = NX
         self.NY = NY
-        self.CHI = CHI
-        self.X_AXIS = np.array([np.cos(np.deg2rad(self.CHI)), 0, np.sin(np.deg2rad(self.CHI))])
+        self.TWOTHETA = TWOTHETA
+        self.X_AXIS = np.array([np.cos(np.deg2rad(self.TWOTHETA)), 0, np.sin(np.deg2rad(self.TWOTHETA))])
         self.X_AXIS = self.X_AXIS/np.linalg.norm(self.X_AXIS, 2)
         self.Y_AXIS = np.array([0, 1, 0])
-        self.DETECTOR_ORG = np.array([-self.F*np.sin(np.deg2rad(self.CHI)),0,self.F*np.cos(np.deg2rad(self.CHI))])
+        self.DETECTOR_ORG = np.array([-self.F*np.sin(np.deg2rad(self.TWOTHETA)),0,self.F*np.cos(np.deg2rad(self.TWOTHETA))])
+        self.ORGY = NY/2.
+        self.ORGX = NX/2
 
     def plot_panel(self, stride=None):
         if stride is None:
@@ -169,8 +171,8 @@ class swing_diffractometer():
 
     def generate_xds_in(self):
         text = ""
-        text = text + "ORGX= {} ".format(self.NX / 2)
-        text = text + "ORGY= {} \n".format(self.NY / 2)
+        text = text + "ORGX= {} ".format(self.ORGX)
+        text = text + "ORGY= {} \n".format(self.ORGY)
         text = text + "DETECTOR_DISTANCE= {}\n".format(self.F)
         text = text + "NX= {} ".format(self.NY)
         text = text + "NY= {} ".format(self.NY)
