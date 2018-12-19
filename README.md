@@ -14,7 +14,10 @@ The Bruker software for controlling the D8 Venture can export MCCD format diffra
 ### Geometric Parameters
 In order for XDS to process D8 Venture data, the coordinate system relating the detector and sample geometry needs to be expressed in a format that XDS understands. 
 
-### Dependencies
+### Tutorial/Notes for Using D8 Venture
+A tutorial for data collection using the D8 Venture can be found [here](/tutorial/tutorial.md).
+
+### Dependencies for Python scripts
 - Python 3
 - [Numpy](http://www.numpy.org/)
 - [Matplolitlib](https://matplotlib.org/)
