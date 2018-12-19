@@ -29,13 +29,14 @@ can navigate to the "Center Crystal" window of the "Set Up" options.
 If the shutter to the D8 cabinet is closed, one can open the cabinet and
 place the goniobase on the magnetic goniometer mount. Prior to opening the
 cabinet, it is often useful to click the "Right" option in the lower right corner of the
-GUI. This moves the detector and goniometer to ensure there is space for placing the crystal.
+GUI (boxed in red, in screenshot below). This moves the detector and goniometer to ensure there is space for placing the crystal.
 It also positions the goniometer mount such that the initial two pegs are available for centering
 the crystal along the phi axis.
 
 The camera can be toggled on using the green/blue button in the top bar of the GUI or toggled off
 using the red/blue button. Crosshairs can also be overlaid on the image using the target-shaped button. For
 details of the GUI, see the screenshot below. While adjusting the goniometer, it is useful to spin the phi
-angle to ensure that the crystal remains at the center of the crosshairs.
+angle to ensure that the crystal remains at the center of the crosshairs. This can be done using the large buttons on the
+right-hand side. To avoid moving while centering the crystal, note that there is an additional mouse in the D8 cabinet. 
 
 ![Screenshot: Centering Crystal](/tutorial/images/GUI_CenterCrystal.PNG)
