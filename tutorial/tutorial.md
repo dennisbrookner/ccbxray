@@ -75,3 +75,12 @@ without the need for any special applications.
 When you are happy with the settings, you can click the "Execute" button at the bottom right corner of the GUI. Here is a screenshot of the "Run Experiment" window:
 
 ![Screenshot: Data Collection](/tutorial/images/GUI_PhiSweep.PNG)
+
+### 4) Image Conversion
+
+After data collection, we can convert the images in batch to MCCD format that we can process the images using XDS. This is handled using the "Unwarp and Convert Images"
+option in the "Reduce Data" menu. Here, one can view the images that are being converted. On the right-hand side of the GUI, one can select the desired batches of images
+for conversion, set a output format (for XDS processing, specify MCCD format), and designate a desired folder to which the new images will be written. I usually make a
+"mccd" image within the directory used for data collection so that the provenance of the images is clear. See GUI screenshot below:
+
+![Screenshot: Image Conversion](/tutorial/images/GUI_ImageConversion.PNG)
