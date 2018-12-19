@@ -9,6 +9,9 @@ This repository contains notes on the process of analyzing datasets from the D8 
 ### Geometric Parameters and Coordinate System
 In order for XDS to process D8 Venture data, the coordinate system relating the detector and sample geometry needs to be expressed in a format that XDS understands. 
 
+-- to do --
+- Add images describing neccessary geometric parameters using the 3D models of the experimental configuration.
+
 ### Tutorial/Notes for Using D8 Venture
 A tutorial for data collection using the D8 Venture can be found [here](/tutorial/tutorial.md).
 
