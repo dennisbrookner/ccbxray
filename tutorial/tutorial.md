@@ -40,3 +40,20 @@ angle to ensure that the crystal remains at the center of the crosshairs. This c
 right-hand side. To avoid moving while centering the crystal, note that there is an additional mouse in the D8 cabinet. 
 
 ![Screenshot: Centering Crystal](/tutorial/images/GUI_CenterCrystal.PNG)
+
+### 2) Screening Crystal
+
+After centering the crystal, navigate to the "Screen Crystal" option in the "Set Up" menu. This mode is handy for taking test
+shots at the crystal. This should be used to assess the desired exposure time (often 30-60 seconds), and to adjust the detector distance, detector
+swing angle, and goniometer omega angle according to the resolution.
+
+To start, I usually set the detector distance to 70 mm, the omega angle to 0 degrees, and the 2theta angle to -10 degrees. Be careful when moving
+the detector and goniometer that they do not bump each other. If they are set to the same angle they are perpendicular to one another, so it is always
+safe to move them to the same angle. If you want to move the detector in further, it may be necessary to adjust the omega angle to compensate. Finally,
+I usually set the scan range to 1 to take a single image, and change the image width to 1.
+
+A screenshot of the  GUI for screening mode is shown below. The default colormap is a bit irritating, but can it can be switched to black/white (ADXV convention)
+by right-clicking the colorbar on the right-hand side. The image thresholding can be adjusted using the sliding bar on the bottom of the image.
+
+![Screenshot: Screening Crystal](/tutorial/images/GUI_ScreenCrystal.PNG)
+
