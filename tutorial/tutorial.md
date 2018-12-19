@@ -19,6 +19,10 @@ following instrument settings:
     - 2Theta angle (swing angle of detector)
     - Detector distance
 
+It will also be necessary to convert the collected images to MCCD format
+from the default Bruker format (.sfrm) prior to processing. This conversion is
+covered in the last section of this tutorial. 
+
 ### 1) Centering Crystal
 
 In the APEX3 GUI, one can make a new sample using the Sample menu. It is good
@@ -57,3 +61,17 @@ by right-clicking the colorbar on the right-hand side. The image thresholding ca
 
 ![Screenshot: Screening Crystal](/tutorial/images/GUI_ScreenCrystal.PNG)
 
+### 3) Data Collection
+
+Once the desired data collection settings have been determined, go to the "Run Experiment" option in the "Collect" menu. Here, one can write a series of phi sweeps
+as rows in the spreadsheet. This way, one can collect wedges in different phi ranges in order to improve the odds of successful indexing. If you know something about
+the space group of your crystal, you could also design a better strategy for data collection.
+
+To ensure that your settings are consistent with the instrument, I often
+click the "Validate" button at the bottom of the window. I also typically use the "Save Table" button to save a ".exp" file in the directory that describes the experiment.
+I find this useful so that I can always come back to the directory and understand what was done. It's worth noting that this file is plain-text so it can be interpreted
+without the need for any special applications.
+
+When you are happy with the settings, you can click the "Execute" button at the bottom right corner of the GUI. Here is a screenshot of the "Run Experiment" window:
+
+![Screenshot: Data Collection](/tutorial/images/GUI_PhiSweep.PNG)
