@@ -17,7 +17,7 @@ By convention, we designate the incident X-ray beam direction as the Z-axis (0 0
 Given this setup for the lab coordinate system in real space, we need to express the relationship between X- and Y- direction of the detector and the lab coordinate system. In
 XDS, this is specified as the parameters [DIRECTION_OF_DETECTOR_X-AXIS](http://xds.mpimf-heidelberg.mpg.de/html_doc/xds_parameters.html#DIRECTION_OF_DETECTOR_X-AXIS=) and
 [DIRECTION_OF_DETECTOR_Y-AXIS](http://xds.mpimf-heidelberg.mpg.de/html_doc/xds_parameters.html#DIRECTION_OF_DETECTOR_Y-AXIS=). Since the swing angle of the detector (denoted as
-2Theta) is in the X-axis, the DIRECTION_OF_DETECTOR_Y_AXIS is unchanged by the swing angle and can be given as (0, 1, 0). Specifically, 2Theta is the angle between the X-ray beam
+2&theta) is in the X-axis, the DIRECTION_OF_DETECTOR_Y_AXIS is unchanged by the swing angle and can be given as (0, 1, 0). Specifically, 2Theta is the angle between the X-ray beam
 direction and the normal to the plane of the detector.
 
 For a graphical representation of these parameters, see the image below. The lab coordinate system is shown on the left-hand side, with the axes defined using the incident X-ray
