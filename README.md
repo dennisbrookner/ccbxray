@@ -27,10 +27,21 @@ angle would be negative. The other detector
 parameters -- [ORGX](http://xds.mpimf-heidelberg.mpg.de/html_doc/xds_parameters.html#ORGX=) and [ORGY](http://xds.mpimf-heidelberg.mpg.de/html_doc/xds_parameters.html#ORGY=) -- are
 defined as the closest point on the detector to the sample. 
 
-![Experimental Setup](/tutorial/images/expt_coordinateSystem.png)
+![Lab Coordinate System -- Detector](/tutorial/images/expt_coordinateSystem.png)
 
--- to do --
-- Add images describing neccessary geometric parameters using the 3D models of the experimental configuration.
+Finally, we can relate the goniometer axis to the lab coordinate system for XDS processing. This is required so that XDS can correctly interpret the series of images and their geometric
+relationship to each other. The first goniometer parameter, chi, is the angle of the 3-axis goniometer with the XZ-plane. On the D8 Venture at CCB, this value is
+fixed at 54.717 degrees. The next parameter is omega, which is the rotation angle of the goniometer around the Y-axis, measured relative to the X-axis. This angle is analogous to 2Theta
+for the detector, but is defined as the angle relative to the X-axis, rather than the incident X-ray beam (Z-axis). Because of this, the goniometer and detector are orthogonal to each other
+when 2Theta=omega. Finally, it is necessary to know the direction of the phi rotation, which is rotation about the goniometer axis. For the D8 Venture, each image is a counter clockwise
+rotation when viewed from the sample towards the goniometer base.
+
+These 3 experimental parameters for the goniometer axis are used to define the [ROTATION_AXIS](http://xds.mpimf-heidelberg.mpg.de/html_doc/xds_parameters.html#ROTATION_AXIS=). The
+goniometer parameters are depicted in the image below. The goniometer axis is shown in green. Rotation about that axis is given by phi, which is defined as negative in the counter clockwise
+direction when viewed from the sample to the goniometer base. As such, when one does a 1 degree wedge starting at phi=90 on the D8, the goniometer will rotate from phi=90 to phi=89. The chi
+and omega angles are also shown.
+
+![Lab Coordinate System -- Goniometer](/tutorial/images/expt_coordinateSystem2.png)
 
 ### Tutorial/Notes for Data Collection using the  D8 Venture
 A tutorial for data collection can be found [here](/tutorial/tutorial.md). This goes through the steps of crystal centering, screening, data collection, and image conversion for
