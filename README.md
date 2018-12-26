@@ -20,7 +20,7 @@ A tutorial for data collection can be found [here](/tutorial/tutorial.md). This 
 processing in XDS. After image conversion, the scripts in this repository can be used to generate an XDS.INP file for data processing..
 
 ### Dependencies for Python scripts
-- Python 3
+- Python2 or Python3
 - [Numpy](http://www.numpy.org/)
 - [Matplolitlib](https://matplotlib.org/)
 - [XDS](http://xds.mpimf-heidelberg.mpg.de/) if you wish to plot the experiment geometry.
