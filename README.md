@@ -9,6 +9,9 @@ This repository contains notes on the process of analyzing datasets from the D8 
 ### Geometric Parameters and Coordinate System
 In order for XDS to process D8 Venture data, the coordinate system relating the detector and sample geometry needs to be expressed in a format that XDS understands. 
 
+By convention, we designate the incident X-ray beam direction as the Z-axis (0 0 1). While this doesn't have to be the case, it is also what we use for non-swing detectors
+(such as at synchrotrons) and  is a very logical convention. The X- and Y-axis in the lab coordinate system are then specified as the orthogonal axes to the X-ray beam. 
+
 -- to do --
 - Add images describing neccessary geometric parameters using the 3D models of the experimental configuration.
 
@@ -24,14 +27,16 @@ processing in XDS. After image conversion, the scripts in this repository can be
 
 ### Example Input
 The example directory  contains an example input for XDS (XDS.INP). This corresponds to an experiment at the CCB facility with the following parameters:
-- 2 theta = -10
-- omega = 0
 - Detector distance = 70
-The following parameters are compatible with the photon 100 detector on the D8 Venture:
+- 2 theta = -10
+- chi = 54.717
+- omega = 0
+
+The D8 goniometer is fixed to chi = 54.717 degrees. The following parameters are compatible with the Photon 100 detector on the D8 Venture:
 - QX = 0.096
 - QY = 0.096
 - NX = 1024
 - NY = 1024
 
-The D8 goniometer is fixed to chi = 54.717 degrees. The XDS.INP file, as provided, can be used for data processing in XDS. However, keep in mind that this script only
+The XDS.INP file, as provided, can be used for data processing in XDS. However, keep in mind that this script only
 outputs the section of the XDS.INP that describe the experiment's geometric parameters.
