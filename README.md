@@ -12,8 +12,9 @@ In order for XDS to process D8 Venture data, the coordinate system relating the 
 -- to do --
 - Add images describing neccessary geometric parameters using the 3D models of the experimental configuration.
 
-### Tutorial/Notes for Using D8 Venture
-A tutorial for data collection using the D8 Venture can be found [here](/tutorial/tutorial.md).
+### Tutorial/Notes for Data Collection using the  D8 Venture
+A tutorial for data collection can be found [here](/tutorial/tutorial.md). This goes through the steps of crystal centering, screening, data collection, and image conversion for
+processing in XDS. After image conversion, the scripts in this repository can be used to generate an XDS.INP file for data processing..
 
 ### Dependencies for Python scripts
 - Python 3
