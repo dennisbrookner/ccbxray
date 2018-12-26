@@ -21,7 +21,9 @@ XDS, this is specified as the parameters [DIRECTION_OF_DETECTOR_X-AXIS](http://x
 direction and the normal to the plane of the detector.
 
 For a graphical representation of these parameters, see the image below. The lab coordinate system is shown on the left-hand side, with the axes defined using the incident X-ray
-beam (red line) and the right-hand rule to define the X-axis and Y-axis. The detector panel is highlighted in blue, with the 2Theta angle (swing angle) indicated. The other detector
+beam (red line) and the right-hand rule to define the X-axis and Y-axis. The detector panel is highlighted in blue, with the 2Theta angle (swing angle) indicated. Note: the 2Theta
+angle is defined as if one is looking down the Y-axis, which is the opposite direction of the top-down view of the experimental setup shown in the image. As such, as shown, the 2Theta
+angle would be negative. The other detector
 parameters -- [ORGX](http://xds.mpimf-heidelberg.mpg.de/html_doc/xds_parameters.html#ORGX=) and [ORGY](http://xds.mpimf-heidelberg.mpg.de/html_doc/xds_parameters.html#ORGY=) -- are
 defined as the closest point on the detector to the sample. 
 
