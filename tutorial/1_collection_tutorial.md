@@ -78,6 +78,8 @@ When you are happy with the settings, you can click the "Execute" button at the 
 
 ### 4) Image Conversion
 
+**NOTE**: As of 2022, Jack and Dennis have determined that conversion to `.MCCD`-format images is not necessary, and may actually lead to errors in the image headers. If you'll be continuing with the [XDS data processing tutorial](/tutorial/2_processing_tutorial.md), sticking with `.sfrm`-format images is fine and probably easiest.
+
 After data collection, we can convert the images in batch to MCCD format that we can process the images using XDS. This is handled using the "Unwarp and Convert Images"
 option in the "Reduce Data" menu. Here, one can view the images that are being converted. On the right-hand side of the GUI, one can select the desired batches of images
 for conversion, set a output format (for XDS processing, specify MCCD format), and designate a desired folder to which the new images will be written. I usually make a
