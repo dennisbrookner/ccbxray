@@ -68,9 +68,9 @@ as rows in the spreadsheet. This way, one can collect wedges in different phi ra
 the space group of your crystal, you could also design a better strategy for data collection.
 
 To ensure that your settings are consistent with the instrument, I often
-click the "Validate" button at the bottom of the window. I also typically use the "Save Table" button to save a ".exp" file in the directory that describes the experiment.
+click the "Validate" button at the bottom of the window. **I also typically use the "Save Table" button to save a ".exp" file in the directory that describes the experiment.**
 I find this useful so that I can always come back to the directory and understand what was done. It's worth noting that this file is plain-text so it can be interpreted
-without the need for any special applications.
+without the need for any special applications. Also, be sure to **copy this file along with your images**. You will need it to create an XDS input file.
 
 When you are happy with the settings, you can click the "Execute" button at the bottom right corner of the GUI. Here is a screenshot of the "Run Experiment" window:
 
