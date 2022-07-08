@@ -5,24 +5,6 @@ collecting data at the CCB X-ray facility using the D8 Venture. This
 is mainly intended as a reminder of useful settings and options for the
 relatively infrequent times that we screen crystals using a home source. 
 
-### Things to note for processing data
-
-If the goal of data collection at CCB is to process data in XDS
-(i.e. index the collected data), it is necessary to keep track of the
-following instrument settings:
-
-- Goniometer:
-    - omega angle
-    - phi range (total range) and width (per image oscillation)
-
-- Detector:
-    - 2Theta angle (swing angle of detector)
-    - Detector distance
-
-It will also be necessary to convert the collected images to MCCD format
-from the default Bruker format (.sfrm) prior to processing. This conversion is
-covered in the last section of this tutorial. 
-
 ### 1) Centering Crystal
 
 In the APEX3 GUI, one can make a new sample using the Sample menu. It is good
@@ -68,21 +50,14 @@ as rows in the spreadsheet. This way, one can collect wedges in different phi ra
 the space group of your crystal, you could also design a better strategy for data collection.
 
 To ensure that your settings are consistent with the instrument, I often
-click the "Validate" button at the bottom of the window. **I also typically use the "Save Table" button to save a ".exp" file in the directory that describes the experiment.**
+click the "Validate" button at the bottom of the window. **I also typically use the "Save Table" button to save a `.exp` file in the directory that describes the experiment.**
 I find this useful so that I can always come back to the directory and understand what was done. It's worth noting that this file is plain-text so it can be interpreted
-without the need for any special applications. Also, be sure to **copy this file along with your images**. You will need it to create an XDS input file.
+without the need for any special applications. **You can also reuse a previous `.exp` file by clicking "load table" and browsing for the file**.
 
 When you are happy with the settings, you can click the "Execute" button at the bottom right corner of the GUI. Here is a screenshot of the "Run Experiment" window:
 
 ![Screenshot: Data Collection](/tutorial/images/GUI_PhiSweep.PNG)
 
-### 4) Image Conversion
+### 4) Export Images
 
-**NOTE**: As of 2022, Jack and Dennis have determined that conversion to `.MCCD`-format images is not necessary, and may actually lead to errors in the image headers. If you'll be continuing with the [XDS data processing tutorial](/tutorial/2_processing_tutorial.md), sticking with `.sfrm`-format images is fine and probably easiest.
-
-After data collection, we can convert the images in batch to MCCD format that we can process the images using XDS. This is handled using the "Unwarp and Convert Images"
-option in the "Reduce Data" menu. Here, one can view the images that are being converted. On the right-hand side of the GUI, one can select the desired batches of images
-for conversion, set a output format (for XDS processing, specify MCCD format), and designate a desired folder to which the new images will be written. I usually make a
-"mccd" image within the directory used for data collection so that the provenance of the images is clear. See GUI screenshot below:
-
-![Screenshot: Image Conversion](/tutorial/images/GUI_ImageConversion.PNG)
+Thanks to the valiant bug-finding efforts of Kevin, it is now possible to simply export/save the default `.sfrm` diffraction images and process them in DIALS. See instructions for that [here](https://docs.google.com/document/d/12xUN9CjI-50afmi3HdK_QFJuVoU7rYkB7QkXr72WC7s/edit#heading=h.cmfixdmu3t8g) (ctrl+F for "CCB")
